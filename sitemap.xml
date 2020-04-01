@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://marlinfw.org/feeds/feed.json</loc>
-        <lastmod>2020-01-01T05:35:48-06:00</lastmod>
+        <loc>https://marlinfw.org/feeds/feed.json</loc>
+        <lastmod>2020-03-31T21:41:04-05:00</lastmod>
     </url>
     <url>
-        <loc>http://marlinfw.org/</loc>
-        <lastmod>2020-01-01T05:35:48-06:00</lastmod>
+        <loc>https://marlinfw.org/</loc>
+        <lastmod>2020-03-31T21:41:04-05:00</lastmod>
     </url>
     <url>
-        <loc>http://marlinfw.org/assets/stylesheets/main.css</loc>
-        <lastmod>2020-01-01T05:35:48-06:00</lastmod>
+        <loc>https://marlinfw.org/assets/stylesheets/main.css</loc>
+        <lastmod>2020-03-31T21:41:04-05:00</lastmod>
     </url>
 </urlset>
