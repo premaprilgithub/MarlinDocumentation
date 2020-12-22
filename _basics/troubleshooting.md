@@ -22,7 +22,19 @@ category: [ articles, getting-started ]
 #define ST7920_DELAY_2 DELAY_NS(400) // After DAT
 #define ST7920_DELAY_3 DELAY_NS(200) // After CLK HIGH
 ```
+##### The Best Solution
+Open file "ultralcd_impl_DOGM.h"
+and Goto the LCD selection section. Here you can select how many strips your Display have. And you'll find the problem solved. Here is the code which i have selection for my Ramps1.4 with "Reprap full graphics smart controller" having 2 strips.
 
+// LCD selection
+#if ENABLED(REPRAPWORLD_GRAPHICAL_LCD)
+  U8GLIB_ST7920_128X64_4X u8g(LCD_PINS_RS); // 2 stripes
+  // U8GLIB_ST7920_128X64 u8g(LCD_PINS_RS); // 8 stripes
+#elif ENABLED(U8GLIB_ST7920)
+  U8GLIB_ST7920_128X64_4X u8g(LCD_PINS_D4, LCD_PINS_ENABLE, LCD_PINS_RS); // Original u8glib device. 2 stripes
+                                                                            // No 4 stripe device available from u8glib.
+  //U8GLIB_ST7920_128X64_1X u8g(LCD_PINS_D4, LCD_PINS_ENABLE, LCD_PINS_RS);    // Original u8glib device. 8 stripes
+  //U8GLIB_ST7920_128X64_RRD u8g(0); // Number of stripes can be adjusted in ultralcd_st7920_u8glib_rrd.h with PAGE_HEIGHT
 ##### Alternative Solutions
 - For AVR boards open `ultralcd_st7920_u8glib_rrd_AVR.h` and remove `#pragma GCC optimize (3)` to reduce code optimization.
 - Add 4.7k pullup resistors to the SPI lines if they are not commonly used for SPI.
